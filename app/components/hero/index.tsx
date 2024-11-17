@@ -1,57 +1,10 @@
 "use client";
-import gsap from "gsap";
-import React, { useEffect, useRef } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef } from "react";
+import ScrollTo from "../scroll-to";
 
 // gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
-  const scrollTextRef = useRef(null);
   const mainContainer = useRef(null);
-  const scrollTextContainer = useRef(null);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      // Cambia el texto utilizando GSAP
-      gsap.to(scrollTextRef.current, {
-        duration: 1,
-        text: {
-          value: "S    CR    L",
-          delimiter: "",
-        },
-      });
-
-      // Después de 3 segundos, vuelve a "Scroll"
-      setTimeout(() => {
-        gsap.to(scrollTextRef.current, {
-          duration: 1,
-          text: {
-            value: "Scroll",
-            delimiter: "",
-          },
-        });
-      }, 2000); // Tiempo hasta que vuelva a "Scroll"
-    }, 4000); // Cambia de texto cada 6 segundos
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: mainContainer.current,
-        start: "top top",
-        end: "bottom center",
-        scrub: 1,
-        // markers: true,
-      },
-    });
-
-    tl.to(scrollTextContainer.current, {
-      opacity: 0,
-    });
-
-    // Limpieza
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      clearInterval(intervalId);
-    };
-  }, []);
 
   return (
     <div
@@ -98,20 +51,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div
-        ref={scrollTextContainer}
-        className="absolute bottom-[5dvh] w-full text-xs font-medium uppercase flex items-center justify-center"
-      >
-        <p className="">{"("}&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p
-          style={{ opacity: 1 }}
-          ref={scrollTextRef}
-          className="w-[60px]  text-center text-neutral-500"
-        >
-          Scroll
-        </p>
-        <p className="">&nbsp;&nbsp;&nbsp;&nbsp;{")"}</p>
-      </div>
+      <ScrollTo />
     </div>
   );
 };

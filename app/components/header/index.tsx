@@ -2,6 +2,7 @@ import gsap from "gsap";
 import React, { useRef } from "react";
 
 import { TextPlugin } from "gsap/TextPlugin";
+import Link from "next/link";
 gsap.registerPlugin(TextPlugin);
 
 const Header = () => {
@@ -36,7 +37,8 @@ const Header = () => {
 
   return (
     <div className="px-5 h-[10dvh] uppercase text-[11px] flex fixed z-[50] top-0 left-0 w-full items-center justify-between tracking-wider">
-      <h3
+      <Link
+        href={"/"}
         ref={titleRef}
         onMouseEnter={() => handleHover(titleRef, "R Q")}
         // onMouseEnter={()=> hola()}
@@ -44,19 +46,22 @@ const Header = () => {
         className="hover:text-neutral-500 w-[50px]"
       >
         ROKE
-      </h3>
+      </Link>
 
       <nav className="flex items-center gap-4">
-        <p
+        <Link
           ref={aboutRef}
           onMouseEnter={() => handleHover(aboutRef, "(B T)")}
           onMouseLeave={() => handleMouseLeave(aboutRef, "About")}
           style={{ whiteSpace: "pre", width: "60px", textAlign: "center" }}
           className="hover:text-neutral-500"
+          href={"/about"}
         >
           About
-        </p>
-        <p
+        </Link>
+
+        <Link
+          href={"/work"}
           ref={workRef}
           onMouseEnter={() => handleHover(workRef, "(W RK)")}
           onMouseLeave={() => handleMouseLeave(workRef, "Work")}
@@ -64,8 +69,9 @@ const Header = () => {
           className="hover:text-neutral-500"
         >
           Work
-        </p>
-        <p
+        </Link>
+        <Link
+          href={"#"}
           ref={archiveRef}
           onMouseEnter={() => handleHover(archiveRef, "(RCH V)")}
           onMouseLeave={() => handleMouseLeave(archiveRef, "Archive")}
@@ -73,7 +79,7 @@ const Header = () => {
           className="hover:text-neutral-500"
         >
           Archive
-        </p>
+        </Link>
       </nav>
     </div>
   );

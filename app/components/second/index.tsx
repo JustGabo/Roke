@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import React, { useLayoutEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Second = () => {
   const text = "All extremes of feeling are allied";
@@ -73,7 +74,7 @@ const Second = () => {
           return (
             <span key={i} className="relative">
               <span
-                className="text-[17dvw] opacity-0 leading-[.9em] uppercase"
+                className="text-[16dvw] opacity-0 leading-[.8em] uppercase"
                 ref={(el) => {
                   splitRef.current[i] = el;
                 }}
@@ -95,7 +96,7 @@ const Second = () => {
                 className="relative text-end"
               >
                 <span
-                  className="text-[17dvw] opacity-0 leading-[.9em] uppercase"
+                  className="text-[16dvw] opacity-0 leading-[.8em] uppercase"
                   ref={(el) => {
                     secondSplitRef.current[i] = el;
                   }}

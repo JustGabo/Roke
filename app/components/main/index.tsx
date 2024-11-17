@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import VideoBackground from "../background";
+// import VideoBackground from "../background";
 import Lenis from "lenis";
 import Header from "../header";
 import Hero from "../hero";
@@ -28,9 +28,9 @@ const Main = () => {
 
   return (
     <main className="">
-      <VideoBackground />
+      {/* <VideoBackground /> */}
       <Header />
-      <div className=" px-5">
+      <div className="px-5">
         <Hero />
         <Second/>
         <Third/>

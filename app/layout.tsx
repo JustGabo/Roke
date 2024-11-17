@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
 import "./globals.css";
+import VideoBackground from "./components/background";
 // import { GsapProvider } from "./components/gsapContext";
 // import gsap from "gsap";
 // import {ScrambleTextPlugin} from "gsap/ScrambleTextPlugin";
@@ -25,7 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* <GsapProvider> */}
-        <body className={playfair.className}>{children}</body>
+      <body className={playfair.className}>
+        <VideoBackground />
+        {children}
+      </body>
       {/* </GsapProvider> */}
     </html>
   );
