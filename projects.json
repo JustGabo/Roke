@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "The Blimp",
+    "description": "The blimp is a dynamic music catalog that highlights the latest releases, exclusive interviews, music videos, and more.",
+    "feature": "Neundex",
+    "image": "/files/firstProject.png",
+    "category": "Photo" 
+  },
+  {
+    "id": 2,
+    "title": "Balmain",
+    "description": "Balmain Beauty is an e-commerce bringing the brand’s haute couture essence to the digital world. From concept to execution, the site was designed to embody the luxurious and refined universe of Balmain Beauty, offering an immersive shopping experience that reflects the brand’s elegance and sophistication.",
+    "feature": "Monks",
+    "image": "/files/secondProject.png",
+    "category": "Edit"
+  },
+  {
+    "id": 3,
+    "title": "Hervé",
+    "description": "Hervé Baillargeon is a Montreal-based director celebrated for his remarkable sensitivity and his talent for creating captivating scenes and poetic sequences that evoke deep emotions.",
+    "feature": "Locomotive",
+    "image": "/files/thirdProject.png",
+    "category": "Shop"
+  }
+]
