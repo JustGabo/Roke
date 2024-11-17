@@ -18,7 +18,7 @@ const ImageAbout = () => {
 
         <div className="w-full h-full relative">
           <Image
-            src={"/files/girl.webp"}
+            src={"/files/girl.jpg"}
             alt="image"
             fill
             className="object-cover"
